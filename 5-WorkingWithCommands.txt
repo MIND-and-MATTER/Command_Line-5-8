@@ -1,4 +1,5 @@
-# Concepts addressed:
+# Concepts addressed: Prompt, Shell, Directory, File permission, Argument
+
 ~/command-line-5-8-lucca001$ pwd
 /home/runner/command-line-5-8-lucca001
 ~/command-line-5-8-lucca001$ ls

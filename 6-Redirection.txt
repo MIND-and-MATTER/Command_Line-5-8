@@ -1,4 +1,4 @@
-# Concepts addressed:
+# Concepts addressed: # Concepts addressed: Prompt, Shell, Directory, File permission, Argument, Redirection.
 
 ~/command-line-5-8-lucca001$ ls -l /usr/bin > ls-output.txt
 ~/command-line-5-8-lucca001$ ls -l ls-output.txt 

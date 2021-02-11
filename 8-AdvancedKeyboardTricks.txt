@@ -1,1 +1,2 @@
-# Concepts addressed:
+# Concepts addressed: Prompt, Shell, Directory, File permission, Argument
+

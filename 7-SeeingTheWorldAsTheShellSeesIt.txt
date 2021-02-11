@@ -1,2 +1,170 @@
-# Concepts addressed: Prompt, Shell, Directory, File permission, Argument
+# Concepts addressed: Prompt, Shell, Directory, File permission, Argument, Parameter, Variable.
 
+~/command-line-5-8-lucca001$ echo this is a test                this is a test
+~/command-line-5-8-lucca001$ echo *
+5-WorkingWithCommands.txt 6-Redirection.txt 7-SeeingTheWorldAsTheShellSeesIt.txt 8-AdvancedKeyboardTricks.txt ls-error.txt ls-output.txt ls.txt movie.mpeg pangram.txt README.md
+~/command-line-5-8-lucca001$ ls
+5-WorkingWithCommands.txt         ls-error.txt   pangram.txt
+6-Redirection.txt             ls-output.txt  README.md
+7-SeeingTheWorldAsTheShellSeesIt.txt  ls.txt
+8-AdvancedKeyboardTricks.txt          movie.mpeg
+~/command-line-5-8-lucca001$ echo D*
+D*
+~/command-line-5-8-lucca001$ echo *s
+*s
+~/command-line-5-8-lucca001$ echo [[:upper:]]*
+README.md
+~/command-line-5-8-lucca001$ echo /usr/* /share
+/usr/bin /usr/doc /usr/games /usr/include /usr/lib /usr/lib32 /usr/libexec /usr/local /usr/sbin /usr/share /usr/src /share
+~/command-line-5-8-lucca001$ ls -d .* | more
+.
+..
+.git
+.replit
+~/command-line-5-8-lucca001$ echo .[!.]*
+.git .replit
+~/command-line-5-8-lucca001$ ls -A
+5-WorkingWithCommands.txt         .git       movie.mpeg
+6-Redirection.txt             ls-error.txt   pangram.txt
+7-SeeingTheWorldAsTheShellSeesIt.txt  ls-output.txt  README.md
+8-AdvancedKeyboardTricks.txt          ls.txt         .replit
+~/command-line-5-8-lucca001$ echo ~
+/home/runner
+~/command-line-5-8-lucca001$ echo ~foo
+~foo
+~/command-line-5-8-lucca001$ echo $((2 + 2))
+4
+~/command-line-5-8-lucca001$ echo $(($((5**2)) * 3))
+75
+~/command-line-5-8-lucca001$ echo $(((5**2) * 3))
+75
+Five divided by two equals 2
+~/command-line-5-8-lucca001$ echo with $((5%2)) left over
+with 1 left over
+~/command-line-5-8-lucca001$ echo Five divided by two equals $((5/2)) with $((5%2)) left over
+Five divided by two equals 2 with 1 left over
+~/command-line-5-8-lucca001$ echo Front-{A,B,C}-Back
+Front-A-Back Front-B-Back Front-C-Back
+~/command-line-5-8-lucca001$ echo Number_{1..5}
+Number_1 Number_2 Number_3 Number_4 Number_5
+~/command-line-5-8-lucca001$ echo {01..15}
+01 02 03 04 05 06 07 08 09 10 11 12 13 14 15
+~/command-line-5-8-lucca001$ echo {001..15}
+001 002 003 004 005 006 007 008 009 010 011 012 013 014 015
+~/command-line-5-8-lucca001$ echo {Z..A}
+Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+~/command-line-5-8-lucca001$ echo a{A{1,2},B{3,4}}b
+aA1b aA2b aB3b aB4b
+~/command-line-5-8-lucca001$ mkdir Photos
+~/command-line-5-8-lucca001$ cd Photos
+~/command-line-5-8-lucca001/Photos$ mkdir  {2007..2009}-{01..-12}
+~/command-line-5-8-lucca001/Photos$ ls
+2007-000  2007--08  2008--03  2008--12  2009--07
+2007-001  2007--09  2008--04  2009-000  2009--08
+2007--01  2007--10  2008--05  2009-001  2009--09
+2007--02  2007--11  2008--06  2009--01  2009--10
+2007--03  2007--12  2008--07  2009--02  2009--11
+2007--04  2008-000  2008--08  2009--03  2009--12
+2007--05  2008-001  2008--09  2009--04
+2007--06  2008--01  2008--10  2009--05
+2007--07  2008--02  2008--11  2009--06
+
+~/command-line-5-8-lucca001/Photos$ echo $USER
+runner
+~/command-line-5-8-lucca001/Photos$ printenv | more
+LC_ALL=en_US.UTF-8
+LD_LIBRARY_PATH=/home/runner/.apt/usr/lib/x86_64-linux-gnu:/home/runner
+/.apt/usr/lib/i386-linux-gnu:/home/runner/.apt/usr/lib:
+XDG_CONFIG_HOME=/config
+LANG=en_US.UTF-8
+DISPLAY=:0
+REPL_SLUG=command-line-5-8-lucca001
+REPL_IMAGE=gcr.io/marine-cycle-160323/polygott:1611939062
+HOSTNAME=9d9029ca6716
+REPL_ID=7095b727-ca19-41ee-9b2f-c4b8e53aff7e
+VIRTUAL_ENV=/opt/virtualenvs/python3
+LANGS=
+USER=runner
+REPL_OWNER=lucca001
+PROMPT_DIRTRIM=2
+PWD=/home/runner/command-line-5-8-lucca001/Photos
+HOME=/home/runner
+CPATH=
+REPLIT_DB_URL=https://kv.repl.it/v0/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ
+9.eyJleHAiOjE2MTMxOTEzODYsImlhdCI6MTYxMzA3OTc4NiwiaXNzIjoiY29ubWFuIiwiZ
+GF0YWJhc2VfaWQiOiI3MDk1YjcyNy1jYTE5LTQxZWUtOWIyZi1jNGI4ZTUzYWZmN2UifQ.o
+qAqlmSEMCCAK80cJl_Im1jwEUEM_8A-34F-Iy7pjP1BfElSdkhrbFuOj6mYcDK5XcFmD9Bl
+CQrrwewHZgcUJw
+~/command-line-5-8-lucca001/Photos$ echo $SUER
+
+~/command-line-5-8-lucca001/Photos$ pwd
+/home/runner/command-line-5-8-lucca001/Photos
+~/command-line-5-8-lucca001/Photos$ cd ..
+~/command-line-5-8-lucca001$ pwd
+/home/runner/command-line-5-8-lucca001
+
+~/command-line-5-8-lucca001$ echo $(ls)
+5-WorkingWithCommands.txt 6-Redirection.txt 7-SeeingTheWorldAsTheShellSeesIt.txt 8-AdvancedKeyboardTricks.txt ls-error.txt ls-output.txt ls.txt movie.mpeg pangram.txt Photos README.md
+~/command-line-5-8-lucca001$ ls -l $(which cp)
+-rwxr-xr-x 1 root root 141528 Jan 18  2018 /bin/cp 
+~/command-line-5-8-lucca001$ file $(ls -d /usr/bin/* | grep zip)
+/usr/bin/funzip:     ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=7aa1524b9c858c29db1dba7fa04ae27cdb6c5de4, stripped
+/usr/bin/gpg-zip:    POSIX shell script, ASCII text executable
+/usr/bin/preunzip:   POSIX shell script, ASCII text executable
+/usr/bin/prezip:     POSIX shell script, ASCII text executable
+/usr/bin/prezip-bin: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=f8e18f9ebb7d911b28c1f11d6db9040819073348, stripped
+/usr/bin/unzip:      ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=ac1eb2744561bfb2319b99ece51815b5caab0dfd, stripped
+/usr/bin/unzipsfx:   ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=306a9fb0ff719f3172c3050e15c9fdd20872b50a, stripped
+/usr/bin/zip:        ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=c828586e6e7cf929500a5b9c04faece9eceed5cc, stripped
+/usr/bin/zipcloak:   ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=6675095584351a4d9e63370ceb1dcce0232c6140, stripped
+/usr/bin/zipdetails: Perl script text executable
+/usr/bin/zipgrep:    POSIX shell script, ASCII text executable
+/usr/bin/zipinfo:    ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=ac1eb2744561bfb2319b99ece51815b5caab0dfd, stripped
+/usr/bin/zipnote:    ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=9d9a7264805021adae207c5d13fb0ab43a6fb04e, stripped
+/usr/bin/zipsplit:   ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=80f65d65f35b6bb9d37e8074bfa1e01c4b7ce18e, stripped
+~/command-line-5-8-lucca001$ ls -l `which cp`
+-rwxr-xr-x 1 root root 141528 Jan 18  2018 /bin/cp
+
+~/command-line-5-8-lucca001$ echo this is a     test
+this is a test
+~/command-line-5-8-lucca001$ echo the total is $100.00
+the total is 00.00
+~/command-line-5-8-lucca001$ ls -l two words.txt
+ls: cannot access 'two': No such file or directory
+ls: cannot access 'words.txt': No such file or directory
+~/command-line-5-8-lucca001$ ls -l "two words.txt"
+ls: cannot access 'two words.txt': No such file or directory
+~/command-line-5-8-lucca001$ echo "$USER $((2 + 2))$(cal)"
+runner 4   February 2021      
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28                    
+                      
+~/command-line-5-8-lucca001$ echo "this is a    test"
+this is a    test
+~/command-line-5-8-lucca001$ echo this is a     test
+this is a test
+~/command-line-5-8-lucca001$ echo $(cal)February 2021 Su Mo Tu We Th Fr Sa 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+~/command-line-5-8-lucca001$ echo "$(cal)"
+   February 2021      
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28                    
+
+~/command-line-5-8-lucca001$ echo test ~/*.txt {a,b} $(echo foo) $((2+2)) $USER
+test /home/runner/*.txt a b foo 4 runner
+~/command-line-5-8-lucca001$ echo 'test ~/*.txt {a,b} $(echo foo) $((2+2)) $USER'
+test ~/*.txt {a,b} $(echo foo) $((2+2)) $USER
+
+~/command-line-5-8-lucca001$ echo "The balance for user $USER is: \$5.00"The balance for user runner is: $5.00
+~/command-line-5-8-lucca001$ mv bad\&filename good_filenme
+mv: cannot stat 'bad&filename': No such file or directory
+~/command-line-5-8-lucca001$
+~/command-line-5-8-lucca001$ exit
+exit

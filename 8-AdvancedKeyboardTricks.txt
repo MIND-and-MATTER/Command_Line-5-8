@@ -1,2 +1,2 @@
-# Concepts addressed: Prompt, Shell, Directory, File permission, Argument
+# Concepts addressed: Prompt, Shell, Directory, File permission, Argument, Parameter, Variable.
 

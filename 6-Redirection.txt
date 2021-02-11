@@ -1,1 +1,199 @@
+# Concepts addressed:
 
+~/command-line-5-8-lucca001$ ls -l /usr/bin > ls-output.txt
+~/command-line-5-8-lucca001$ ls -l ls-output.txt 
+-rw-r--r-- 1 runner runner 96358 Feb 11 19:43 ls-output.txt
+~/command-line-5-8-lucca001$ less ls-output.txt 
+bash: less: command not found
+~/command-line-5-8-lucca001$ more ls-output.txt 
+total 1009080
+-rwxr-xr-x 1 root root       51384 Jan 18  2018 [
+-rwxr-xr-x 1 root root          96 Sep 30 13:38 2to3-2.7
+lrwxrwxrwx 1 root root          25 Jan 27 00:59 aclocal -
+> /etc/alternatives/aclocal
+-> ../lib/llvm-7/bin/yaml-bench
+lrwxrwxrwx 1 root root          28 Dec  9  2019 yaml-bench-8 
+-> ../lib/llvm-8/bin/yaml-bench
+lrwxrwxrwx 1 root root          36 Jan 27 01:05 yarn -> ../li
+b/node_modules/yarn/bin/yarn.js
+lrwxrwxrwx 1 root root          36 Jan 27 01:05 yarnpkg -> ..
+/lib/node_modules/yarn/bin/yarn.js
+-rwxr-xr-x 1 root root       30904 Jan 18  2018 yes
+-rwxr-xr-x 1 root root       18488 Dec  7 16:38 zdump
+-rwxr-xr-x 1 root root      216256 Apr 21  2017 zip
+-rwxr-xr-x 1 root root       93816 Apr 21  2017 zipcloak
+-rwxr-xr-x 1 root root       48497 Oct 19 10:57 zipdetails
+-rwxr-xr-x 1 root root        2953 Nov 26 21:01 zipgrep
+-rwxr-xr-x 2 root root      178312 Nov 26 21:01 zipinfo
+-rwxr-xr-x 1 root root       89488 Apr 21  2017 zipnote
+-rwxr-xr-x 1 root root       93584 Apr 21  2017 zipsplit
+~/command-line-5-8-lucca001$ ls -l bin/usr > ls-output.txt 
+ls: cannot access 'bin/usr': No such file or directory
+~/command-line-5-8-lucca001$ ls -l ls-output.txt 
+-rw-r--r-- 1 runner runner 0 Feb 11 19:47 ls-output.txt
+~/command-line-5-8-lucca001$ > ls-output.txt 
+~/command-line-5-8-lucca001$ ls -l /usr/bin >> ls-output.txt ~/command-line-5-8-lucca001$ ls -l /usr/bin >> ls-output.txt ~/command-line-5-8-lucca001$ ls -l /usr/bin >> ls-output.txt ~/command-line-5-8-lucca001$ ls -l ls-output.txt -rw-r--r-- 1 runner runner 289074 Feb 11 19:51 ls-output.txt
+~/command-line-5-8-lucca001$ ls -l /bun/usr 2> ls-error.txt
+~/command-line-5-8-lucca001$ ls -l /bin/usr > ls-output.txt 2>&1
+~/command-line-5-8-lucca001$ ls -l /bin/usr &> ls-output.txt 
+~/command-line-5-8-lucca001$ ls -l /bin/usr &>> ls-output.txt 
+~/command-line-5-8-lucca001$ ls -l ls-output.txt -rw-r--r-- 1 runner runner 111 Feb 11 19:55 ls-output.txt
+~/command-line-5-8-lucca001$ ls -l /bin/usr 2> /dev/null
+
+~/command-line-5-8-lucca001$ cat ls-output.txt
+ls: cannot access 'bin/usr': No such file or directory
+ls: cannot access '/bin/usr': No such file or directory
+~/command-line-5-8-lucca001$ cat movie.mpeg.0* > movie.mpeg
+cat: 'movie.mpeg.0*': No such file or directory
+~/command-line-5-8-lucca001$ cat
+Pack my box with five dozen liquor jugs.
+Pack my box with five dozen liquor jugs.
+~/command-line-5-8-lucca001$ cat > pangram.txt
+Sphinx of black quartz, judge my vow.~/command-line-5-8-lucca001$ cat pangram.txt
+Sphinx of black quartz, judge my vow.~/command-line-5-8-lucca001$ cat < pangram.txt 
+Sphinx of black quartz, judge my vow.
+
+~/command-line-5-8-lucca001$ ls -l /usr/bin/ | less
+bash: less: command not found
+~/command-line-5-8-lucca001$ ls -l /usr/bin/ | more
+total 1009072
+-rwxr-xr-x 1 root root       51384 Jan 18  2018 [
+-rwxr-xr-x 1 root root          96 Sep 30 13:38 2to3-2.7
+lrwxrwxrwx 1 root root          25 Jan 27 00:59 aclocal -
+> /etc/alternatives/aclocal
+-rwxr-xr-x 1 root root       36792 Mar 25  2018 aclocal-1
+.15
+-rwxr-xr-x 1 root root        7415 Aug  7  2020 add-apt-r
+epository
+-rwxr-xr-x 1 root root       22608 Sep 16 18:43 addpart
+lrwxrwxrwx 1 root root          26 Jun 18  2020 addr2line
+ -> x86_64-linux-gnu-addr2line
+-rwxr-xr-x 1 root root       91808 Oct 16  2017 ag
+-rwxr-xr-x 1 root root          73 Dec 10 04:48 al
+-rwxr-xr-x 1 root root          73 Dec 10 04:48 al2
+lrwxrwxrwx 1 root root          30 Jan 27 01:00 appletvie
+wer -> /etc/alternatives/appletviewer
+-rwxr-xr-x 1 root root       10232 Apr 21  2017 appres
+-rwxr-xr-x 1 root root          80 Dec 10 04:48 aprofutil
+lrwxrwxrwx 1 root root           6 Aug  4  2018 apropos -
+> whatis
+-rwxr-xr-x 1 root root       14424 Dec  7 11:13 apt
+lrwxrwxrwx 1 root root          18 Aug  7  2020 apt-add-r
+~/command-line-5-8-lucca001$ ls /bin /usr/bin/ | sort | more
+
+[
+2to3-2.7
+aclocal
+aclocal-1.15
+add-apt-repository
+addpart
+addr2line
+ag
+al
+al2
+appletviewer
+appres
+aprofutil
+apropos
+apt
+apt-add-repository
+apt-cache
+apt-cdrom
+apt-config
+apt-extracttemplates
+apt-ftparchive
+apt-get
+~/command-line-5-8-lucca001$ ls /bin /usr/bin/ | sort | uniq | more
+
+[
+2to3-2.7
+aclocal
+aclocal-1.15
+add-apt-repository
+addpart
+addr2line
+ag
+al
+al2
+appletviewer
+appres
+aprofutil
+apropos
+apt
+apt-add-repository
+apt-cache
+apt-cdrom
+apt-config
+apt-extracttemplates
+apt-ftparchive
+apt-get
+~/command-line-5-8-lucca001$ ls /bin /usr/bin | sort | uniq -d |more
+touch
+which
+
+~/command-line-5-8-lucca001$ wc ls-output.txt 
+  2  18 111 ls-output.txt
+~/command-line-5-8-lucca001$ ls /bin /usr/bin/ | sort | uniq | wc -l
+1571
+
+~/command-line-5-8-lucca001$ ls /bin /usr/bin/ | sort | uniq | grep zip
+bunzip2
+bzip2
+bzip2recover
+funzip
+gpg-zip
+gunzip
+gzip
+preunzip
+prezip
+prezip-bin
+unzip
+unzipsfx
+zip
+zipcloak
+zipdetails
+zipgrep
+zipinfo
+zipnote
+zipsplit
+~/command-line-5-8-lucca001$ head -n 5 ls-output.txt total 1009072
+-rwxr-xr-x 1 root root       51384 Jan 18  2018 [
+-rwxr-xr-x 1 root root          96 Sep 30 13:38 2to3-2.7
+lrwxrwxrwx 1 root root          25 Jan 27 00:59 aclocal -> /etc/alternatives/aclocal
+-rwxr-xr-x 1 root root       36792 Mar 25  2018 aclocal-1.15
+~/command-line-5-8-lucca001$ tail -n 5 ls-output.txt 
+-rwxr-xr-x 1 root root       48497 Oct 19 10:57 zipdetails
+-rwxr-xr-x 1 root root        2953 Nov 26 21:01 zipgrep
+-rwxr-xr-x 2 root root      178312 Nov 26 21:01 zipinfo
+-rwxr-xr-x 1 root root       89488 Apr 21  2017 zipnote
+-rwxr-xr-x 1 root root       93584 Apr 21  2017 zipsplit
+~/command-line-5-8-lucca001$ ls /usr/bin/ | tail -n 5
+zipdetails
+zipgrep
+zipinfo
+zipnote
+zipsplit
+~/command-line-5-8-lucca001$ tail -f /var/log/messages
+tail: cannot open '/var/log/messages' for reading: No such file or directory
+tail: no files remaining
+~/command-line-5-8-lucca001$ tail -f /var/log/syslog
+tail: cannot open '/var/log/syslog' for reading: No such file or directory
+tail: no files remaining
+
+~/command-line-5-8-lucca001$ ls /usr/bin | tee ls.txt | grep zip
+funzip
+gpg-zip
+preunzip
+prezip
+prezip-bin
+unzip
+unzipsfx
+zip
+zipcloak
+zipdetails
+zipgrep
+zipinfo
+zipnote
+zipsplit
+~/command-line-5-8-lucca001$ exit
+exit

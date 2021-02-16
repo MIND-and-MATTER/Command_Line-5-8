@@ -1,2 +1,97 @@
-# Concepts addressed: Prompt, Shell, Directory, File permission, Argument, Parameter, Variable.
+# Concepts addressed: Prompt, Shell, Directory, File permission, Argument, Parameter, Variable, Metacharacter
 
+~/command-line-5-8-lucca001$ ls
+5-WorkingWithCommands.txt
+6-Redirection.txt
+7-SeeingTheWorldAsTheShellSeesIt.txt
+8-AdvancedKeyboardTricks.txt
+Photos
+README.md
+~/command-line-5-8-lucca001$ ls 5-WorkingWithCommands.txt 
+5-WorkingWithCommands.txt
+~/command-line-5-8-lucca001$ ls Photos/
+2007-000  2007--06  2008-000  2008--06  2009-000  2009--06
+2007-001  2007--07  2008-001  2008--07  2009-001  2009--07
+2007--01  2007--08  2008--01  2008--08  2009--01  2009--08
+2007--02  2007--09  2008--02  2008--09  2009--02  2009--09
+2007--03  2007--10  2008--03  2008--10  2009--03  2009--10
+2007--04  2007--11  2008--04  2008--11  2009--04  2009--11
+2007--05  2007--12  2008--05  2008--12  2009--05  2009--12
+~/command-line-5-8-lucca001$ rm photos
+rm: cannot remove 'photos': No such file or directory
+~/command-line-5-8-lucca001$ rm Photos/
+rm: cannot remove 'Photos/': Is a directory
+~/command-line-5-8-lucca001$ rm -r Photos/
+~/command-line-5-8-lucca001$ ls
+5-WorkingWithCommands.txt
+6-Redirection.txt
+7-SeeingTheWorldAsTheShellSeesIt.txt
+8-AdvancedKeyboardTricks.txt
+README.md
+~/command-line-5-8-lucca001$ histort | less
+bash: less: command not found
+bash: histort: command not found
+~/command-line-5-8-lucca001$ history | more
+    1  clear
+    2  rm ls-error.txt 
+    3  rm ls-output.txt 
+    4  rm ls.txt
+    5  clear
+    6  rm movie.mpeg 
+    7  rm pangram.txt 
+    8  clear
+    9  ls l
+   10  clear
+   11  las
+   12  clear
+   13  ls
+   14  ls 5-WorkingWithCommands.txt 
+   15  ls Photos/
+   16  rm photos
+   17  rm Photos/
+   18  rm -r Photos/
+   19  ls
+   20  histort | less
+   21  history | more
+~/command-line-5-8-lucca001$ 
+Display all 2005 possibilities? (y or n)
+~/command-line-5-8-lucca001$ history | grep /usr/bin
+   22  history | grep /usr/bin
+~/command-line-5-8-lucca001$ !21
+history | more
+    1  clear
+    2  rm ls-error.txt 
+    3  rm ls-output.txt 
+    4  rm ls.txt
+    5  clear
+    6  rm movie.mpeg 
+    7  rm pangram.txt 
+    8  clear
+    9  ls l
+   10  clear
+   11  las
+   12  clear
+   13  ls
+   14  ls 5-WorkingWithCommands.txt 
+   15  ls Photos/
+   16  rm photos
+   17  rm Photos/
+   18  rm -r Photos/
+   19  ls
+   20  histort | less
+   21  history | more
+   22  history | grep /usr/bin
+   23  history | more
+~/command-line-5-8-lucca001$ !13
+ls
+5-WorkingWithCommands.txt
+6-Redirection.txt
+7-SeeingTheWorldAsTheShellSeesIt.txt
+8-AdvancedKeyboardTricks.txt
+README.md
+~/command-line-5-8-lucca001$ ls Photos/
+ls: cannot access 'Photos/': No such file or directory
+~/command-line-5-8-lucca001$ rm -r Photos/
+rm: cannot remove 'Photos/': No such file or directory
+~/command-line-5-8-lucca001$ exit
+exit
